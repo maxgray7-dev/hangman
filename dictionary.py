@@ -18,5 +18,10 @@ WORDS = [
     "government", 
     "mountain",
     "poison",
-    "difficulty"
+    "difficulty",
+    "bazinga",
+    "kerfuffle",
+    "gobbledygook",
+    "lollygag",
+    ""
 ]
