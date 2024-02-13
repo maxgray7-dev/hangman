@@ -45,8 +45,55 @@ def introduction():
     print("_"*70)
 
 
-def word_choice():
+def library_choice():
     """
-    Computer picks the random word from the library
+    Player picks the category for playing games
     """
+    library = {1: "book_1", 2: "book_2", 3: "book_3", 4: "book_4"} 
     
+    # Difficulty level
+    print("Select difficulty level:")
+    print("1 - EASY")
+    print("2 - Normal")
+    print("3 - Advanced (phrases)")
+    print("4 - Hard")
+
+    while True:
+        print("please pick the number from 1 - 4")
+        player_choice = input("Choose your number wisely:\n").strip()
+
+        if player_choice in ["1", "2", "3", "4"]:
+            difficulty_level = int(player_choice)
+            library_selection = None
+
+            if difficulty_level == 1:
+                library_selection = WORDS_1
+                print("\n You selected difficulty Level: EASY")
+                break              
+
+            elif difficulty_level == 2:
+                library_selection = WORDS_2
+                print("\n You selected difficulty Level: Normal")
+                break
+
+            elif difficulty_level == 3:
+                library_selection = WORDS_3
+                print("\n You selected difficulty Level: Advanced")
+                break
+
+            elif difficulty_level == 4:
+                library_selection = WORDS_4
+                print("\n You selected difficulty Level: Hard")
+                break
+            else: 
+                print("Incorrectly selected difficulty level")
+                print("Please select the number 1, 2, 3 or 4")
+        return library_selection()
+
+
+library_selected = library_choice()
+
+
+def main():
+    """Unites all functions in one and controlls the game process"""
+    print(library_selected)

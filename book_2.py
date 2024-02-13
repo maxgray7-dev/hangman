@@ -1,5 +1,5 @@
 """
-Dictionary - used to randomly pick up words. 
+Dictionary - used to randomly pick up words.
 Difficulty level: Normal (Fruits)
 """
 
