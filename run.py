@@ -49,8 +49,7 @@ def library_choice():
     """
     Player picks the category for playing games
     """
-    library = {1: "book_1", 2: "book_2", 3: "book_3", 4: "book_4"} 
-    
+    library = {1: "book_1", 2: "book_2", 3: "book_3", 4: "book_4"}   
     # Difficulty level
     print("Select difficulty level:")
     print("1 - EASY")
@@ -88,12 +87,19 @@ def library_choice():
             else: 
                 print("Incorrectly selected difficulty level")
                 print("Please select the number 1, 2, 3 or 4")
-        return library_selection()
+    return library_selection
 
 
-library_selected = library_choice()
+library_choice()
+
+
+# Picking the Random word from the selected library.
+if library_selection:
+    random_word = random.choice(library_selection)
+    print(random_word.upper())
 
 
 def main():
     """Unites all functions in one and controlls the game process"""
-    print(library_selected)
+    introduction()
+    library_choice()
