@@ -52,7 +52,7 @@ def library_choice():
     library = {1: "book_1", 2: "book_2", 3: "book_3", 4: "book_4"}   
     # Difficulty level
     print("Select difficulty level:")
-    print("1 - EASY")
+    print("1 - Easy")
     print("2 - Normal")
     print("3 - Advanced (phrases)")
     print("4 - Hard")
@@ -84,19 +84,24 @@ def library_choice():
                 library_selection = WORDS_4
                 print("\n You selected difficulty Level: Hard")
                 break
+
             else: 
                 print("Incorrectly selected difficulty level")
                 print("Please select the number 1, 2, 3 or 4")
     return library_selection
 
+library_selection = library_choice()
 
-library_choice()
 
-
-# Picking the Random word from the selected library.
+# Picking the random word from the selected librarydificulty level.
 if library_selection:
     random_word = random.choice(library_selection)
     print(random_word.upper())
+
+
+# 
+
+
 
 
 def main():
