@@ -31,17 +31,13 @@ def introduction():
     print("_"*70)
     print("\nWELCOME TO THE HANGMAN GAME\n ")
     print("_"*70)
-    print("The objective of the game is simple:\n")
-    print("Computer picks a hidden word.")
-    print("The player has to guess and pick a letter.")
-    print("If the word has picked letter, it opens in the hidden word.")
-    print("Player continues guessing until:")
-    print("player opens entire word or guesses incorrectly.")
-    print("If letter absent - computer displays a part of hangman drawing.")
-    print("When hangman drawing completed - computer wins")
-    print("Player wins if hidden word opened before hangman pic completed.\n")
-    print("_"*70)
-    print("\nPlayer has 7 attempts before 'Hangman' completed")
+    print("The objective of this game is simple:\n")
+    print("There is a random word")
+    print("Computer displays how many letters in it")
+    print("Name a letter, and if the word has it, ")
+    print("that letter/s will be placed in the word")
+    print("You will have 7 attempts to open the word")
+    print("When hangman drawing fully completed - computer wins")
     print("_"*70)
 
 
@@ -85,26 +81,34 @@ def library_choice():
                 print("\n You selected difficulty Level: Hard")
                 break
 
+            # IF statement picks random word from chosen library
+            if library_selection:
+                random_word = random.choice(library_selection)
+                return random_word.upper()
+
             else: 
                 print("Incorrectly selected difficulty level")
-                print("Please select the number 1, 2, 3 or 4")
+                print("Please select the difficulty level 1, 2, 3 or 4")
     return library_selection
 
-library_selection = library_choice()
 
 
-# Picking the random word from the selected librarydificulty level.
-if library_selection:
-    random_word = random.choice(library_selection)
-    print(random_word.upper())
+    """
+    Replaces random word with dashes
+    """
+def hidden_word():
+    """This function replaces the picked by computer word with underscores"""
+    random_word = library_choice()
+    num_of_letters = len(random_word) * " _"
+    return num_of_letters
 
 
-# 
-
+def game_process():
+    
 
 
 
 def main():
-    """Unites all functions in one and controlls the game process"""
     introduction()
     library_choice()
+    print(hidden_word())
