@@ -50,7 +50,7 @@ def library_choice():
     print("Select difficulty level:")
     print("1 - Easy")
     print("2 - Normal")
-    print("3 - Advanced (phrases)")
+    print("3 - Advanced")
     print("4 - Hard")
 
     while True:
@@ -97,17 +97,6 @@ def random_word():
     word = random.choice(library_choice())
     return word
 
-"""
-BELOW 
-'The_word' variable represents the word, that player will try to guess.
-Commands 'strip' and 'upper' ensure there are no whitespaces
-and letters are capital when letter compared.
-Additionally I added 'str' to ensure python takes it as a string.
-"""
-the_word = str(random_word().strip().upper())   # the word that computer picked
-wrong_answers = 0   # player starts with 0 wrong answers - 7 attempts
-
-
 
 def hangman_picture (attempt):
     """Displays a hangman picture which depends on attempts left"""
@@ -127,13 +116,44 @@ def hangman_picture (attempt):
         hangman_7()  
 
 
+def greetings_player(func):
+    """Decorator function to welcome a player """
+    def inner():
+        name = func()
+        print(f"\nHi {name}! Welcome to the game, let's start!")
+        print("="*70)
+
+    return inner
+
+def get_name():
+    while True:
+        name = input("Please enter your name: ")
+        if name.isalpha():
+            return name
+        else:
+            print("Invalid value. Please enter your name again: ")
+        
+
+
+"""
+BELOW 
+'The_word' variable represents the word, that player will try to guess.
+Commands 'strip' and 'upper' ensure there are no whitespaces
+and letters are capital when letter compared.
+Additionally I added 'str' to ensure python takes it as a string.
+"""
+"""the_word = str(random_word().strip().upper())   # the word that computer picked"""
+    wrong_answers = 0   # player starts with 0 wrong answers - 7 attempts
+
+def game_process():
+
+
 
 
     
 
 
-
-def main():
-    introduction()
-    library_choice()
+introduction()
+library_choice()
+greetings_player(get_name)()
    
