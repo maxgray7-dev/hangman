@@ -92,18 +92,43 @@ def library_choice():
     return library_selection
 
 
+def random_word():
+    """This function displays the word computer picked"""
+    word = random.choice(library_choice())
+    return word
 
-    """
-    Replaces random word with dashes
-    """
-def hidden_word():
-    """This function replaces the picked by computer word with underscores"""
-    random_word = library_choice()
-    num_of_letters = len(random_word) * " _"
-    return num_of_letters
+"""
+BELOW 
+'The_word' variable represents the word, that player will try to guess.
+Commands 'strip' and 'upper' ensure there are no whitespaces
+and letters are capital when letter compared.
+Additionally I added 'str' to ensure python takes it as a string.
+"""
+the_word = str(random_word().strip().upper())   # the word that computer picked
+wrong_answers = 0   # player starts with 0 wrong answers - 7 attempts
 
 
-def game_process():
+
+def hangman_picture (attempt):
+    """Displays a hangman picture which depends on attempts left"""
+    if attempt == 6:
+        hangman_1()
+    elif attempt == 5:
+        hangman_2()
+    elif attempt == 4:
+        hangman_3()
+    elif attempt == 3:
+        hangman_4()
+    elif attempt == 2:
+        hangman_5()
+    elif attempt == 1:
+        hangman_6()
+    else:
+        hangman_7()  
+
+
+
+
     
 
 
@@ -111,4 +136,4 @@ def game_process():
 def main():
     introduction()
     library_choice()
-    print(hidden_word())
+   

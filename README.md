@@ -18,3 +18,10 @@ The game starts with computer, picking a random word. After picking the word, co
 - [Credits](#credits)
 
 
+# Credits
+In my work I used libraries and videos to learn techniques and commands that help me in my project.
+I found several advices about what can be used for building this game, I will share those sorces in this section:
+for example I was learning on [this site](https://www.w3schools.com/python/ref_func_str.asp) which commands help me to convert my data into the right format.
+To check my data type I used 'type() command', that I learned form [here:]( https://www.pythonpool.com/check-data-type-python/)
+
+ 
