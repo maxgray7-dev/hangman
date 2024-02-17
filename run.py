@@ -143,7 +143,7 @@ def get_name():
 def ready_to_play():
     """This function will ask player if he is ready to play"""
     while True:
-        response = input("Are you ready to start? Press ('Y'/'N')").strip().upper()
+        response = input("Are you ready to start? Press ('Y'/'N')\n").strip().upper()
         if response == 'Y':
             print("Be brave human! we start now!")
             break
@@ -156,20 +156,22 @@ def ready_to_play():
 
 
 def hidden_word():
-    """This function displays hidden word and responds for the decreasing attempts"""
+    'This function displays hidden word and responds for the decreasing attempts'
     # variables that I will use in this function
-    the_word = random_word()
+    the_word = random_word().upper()
     alphabet = set(string.ascii_uppercase)
-    the_word_letters = set(the_word) # letters from the_word
+    the_word_letters = set(the_word.upper()) # letters from the_word
     named_letters = set() # letters player used already
     my_list = ["_"] * len(the_word) # the_word
     attempt = 7 # Player has 7 attempts
 
+
     while "_" in my_list and attempt > 0 :
         print(" ".join(my_list))
-        new_letter = input("Please enter a letter!").upper().strip()
+        new_letter = input("Please enter a letter!\n").upper().strip()
 
         if new_letter in alphabet - named_letters:
+            print("HERE ", new_letter, type(new_letter))
             named_letters.add(new_letter) # add new letter to the list
 
             if new_letter in the_word_letters:
@@ -190,30 +192,51 @@ def hidden_word():
                     print((("_") * 25) + ("") * 20 + ("_") * 25)
                     print(("_") * 70)
                     named_letters.clear()
-                    return my_list, attempt
+
+                    while True:
+                        restart = input("Would you like to restart and have another chance? Y / N\n").strip().upper()
+
+                        if restart == 'Y':
+                            return True
+                        elif restart == 'N':
+                            return False
+                        else:
+                            print("Sorry, I didn't get this, please enter 'Y' or 'N'")
             
             for i, letter in enumerate(the_word):
+                #print("loop ", letter, new_letter)
                 if letter == new_letter:
                     my_list[i] = new_letter
-                    print("You have left attempts:", attempt)
-                    print("You used next letters:", ", " .join(named_letters))
+                    
         elif new_letter in named_letters:
                 print("You tried this letter before. Please enter another letter!")
         else:
                 ("Invalid value, please enter another letter!")
-    print("\n The word is:", " ".join(my_list))
-    return my_list, attempt
+        print("You have left attempts:", attempt)
+        print("You used next letters:", ", " .join(named_letters))
+    print("\n You won! The word is:", " ".join(my_list))
+    while True:
+        restart = input("Would you like to restart and have another chance? Y / N\n").strip().upper()
+
+        if restart == 'Y':
+            return True
+        elif restart == 'N':
+            return False
+        else:
+            print("Sorry, I didn't get this, please enter 'Y' or 'N'")
 
 
 
-"""  library_choice() == the_word
-the_word = str(random_word().strip().upper()) # this is the word computer picked
-puzzle = len(the_word) * " _ "
-return puzzle"""
+def main():
+    introduction()
+    ready_to_play()
+    greetings_player(get_name)()
 
-introduction()
-ready_to_play()
-greetings_player(get_name)()
-hidden_word()
+    while True:
+        restart = hidden_word()
+        if not restart:
+            break
 
-   
+
+
+main()  
