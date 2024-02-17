@@ -30,15 +30,18 @@ def introduction():
     This section explains game rules to the player.
     """
     print("_"*70)
-    print("\nWELCOME TO THE HANGMAN GAME\n ")
-    print("_"*70)
-    print("The objective of this game is simple:\n")
-    print("There is a random word will be chosen")
-    print("Computer displays how many letters in it")
-    print("Name a letter, and if the word has it, ")
-    print("that letter/s will be placed in the word")
-    print("You will have 7 attempts to open the word")
+    print(" "*8 +"*" * 30)
+    print("**********WELCOME TO THE HANGMAN GAME *********")
+    print(" "*8 +"*" * 30)
+    print(" "*8 +"*" * 30)
+    print("The Hangman GOAL is quite simple:\n")
+    print("There is a random word picked, you chose difficulty.")
+    print("Computer will display then number of letters in it")
+    print("Guess a letter, and if the word has it, ")
+    print("that letter or letters appear in the word")
+    print("Be careful, You have 7 attempts to open the word")
     print("When hangman drawing fully completed - computer wins")
+    print("Good Luck!")
     print("_"*70)
 
 
@@ -122,7 +125,7 @@ def greetings_player(func):
     """Decorator function to welcome a player """
     def inner():
         name = func()
-        print(f"\nHi {name}! Welcome to the game, Enjoy!")
+        print(f"\nHi {name}! Welcome to the game, Let's have fun!")
         print("="*70)
 
     return inner
@@ -130,23 +133,11 @@ def greetings_player(func):
 def get_name():
     while True:
         name = input("Please enter your name: ")
-        if name.isalpha():
+        if name.isalpha() and len(name) > 1:
             return name
         else:
             print("Invalid value. Please enter your name again: ")
         
-
-
-"""
-BELOW 
-'The_word' variable represents the word, that player will try to guess.
-Commands 'strip' and 'upper' ensure there are no whitespaces
-and letters are capital when letter compared.
-Additionally I added 'str' to ensure python takes it as a string.
-the_word = str(random_word().strip().upper()) # this is the word computer picked
-"""
-
-
 
 
 def ready_to_play():
@@ -154,7 +145,7 @@ def ready_to_play():
     while True:
         response = input("Are you ready to start? Press ('Y'/'N')").strip().upper()
         if response == 'Y':
-            print("Be brave human! we start!")
+            print("Be brave human! we start now!")
             break
         elif response == 'N':
             print("Good bye human! Maybe another time")
@@ -164,29 +155,65 @@ def ready_to_play():
     return response
 
 
-
-
 def hidden_word():
-    library_choice() == the_word
-    the_word = str(random_word().strip().upper()) # this is the word computer picked
-    puzzle = len(the_word) * " _ "
-    return puzzle
+    """This function displays hidden word and responds for the decreasing attempts"""
+    # variables that I will use in this function
+    the_word = random_word()
+    alphabet = set(string.ascii_uppercase)
+    the_word_letters = set(the_word) # letters from the_word
+    named_letters = set() # letters player used already
+    my_list = ["_"] * len(the_word) # the_word
+    attempt = 7 # Player has 7 attempts
+
+    while "_" in my_list and attempt > 0 :
+        print(" ".join(my_list))
+        new_letter = input("Please enter a letter!").upper().strip()
+
+        if new_letter in alphabet - named_letters:
+            named_letters.add(new_letter) # add new letter to the list
+
+            if new_letter in the_word_letters:
+                the_word_letters.remove(new_letter)
+                print(f"Good Job!! You guessed correct! This word has the letter: '{new_letter}'")
+
+            elif new_letter not in the_word_letters:
+                print(f"Alas! This is incorrect! This word has no letter: '{new_letter}'")
+                attempt -=1
+                hangman_picture(attempt) # this should display the hangman picture
+                    
+                if attempt == 0: # This checks after each answer if player has attempts
+                    print(f" Sorry. No '{new_letter}' in this word ! You have no more attempts! You lost")
+                    print("The word you tried to guess was: ", the_word)
+                    print(("_") * 70)
+                    print((("_") * 25) + ("") * 20 + ("_") * 25)
+                    print("\nYOU LOSE!")
+                    print((("_") * 25) + ("") * 20 + ("_") * 25)
+                    print(("_") * 70)
+                    named_letters.clear()
+                    return my_list, attempt
+            
+            for i, letter in enumerate(the_word):
+                if letter == new_letter:
+                    my_list[i] = new_letter
+                    print("You have left attempts:", attempt)
+                    print("You used next letters:", ", " .join(named_letters))
+        elif new_letter in named_letters:
+                print("You tried this letter before. Please enter another letter!")
+        else:
+                ("Invalid value, please enter another letter!")
+    print("\n The word is:", " ".join(my_list))
+    return my_list, attempt
 
 
 
+"""  library_choice() == the_word
+the_word = str(random_word().strip().upper()) # this is the word computer picked
+puzzle = len(the_word) * " _ "
+return puzzle"""
 
-       
-
-    
-
-
-
-
-def main():
-    introduction()
-    ready_to_play()
-    greetings_player(get_name)()
-    library_choice()
-    hidden_word()
+introduction()
+ready_to_play()
+greetings_player(get_name)()
+hidden_word()
 
    
