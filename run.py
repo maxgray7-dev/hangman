@@ -3,6 +3,7 @@
 
 import random  # generates random words for the game
 import string  # format letters to uppercase
+import sys # this allows to close the game if player don't want to play
 
 # 7 drawings imported from module and represent lives in the game
 
@@ -32,7 +33,7 @@ def introduction():
     print("\nWELCOME TO THE HANGMAN GAME\n ")
     print("_"*70)
     print("The objective of this game is simple:\n")
-    print("There is a random word")
+    print("There is a random word will be chosen")
     print("Computer displays how many letters in it")
     print("Name a letter, and if the word has it, ")
     print("that letter/s will be placed in the word")
@@ -98,6 +99,7 @@ def random_word():
     return word
 
 
+
 def hangman_picture (attempt):
     """Displays a hangman picture which depends on attempts left"""
     if attempt == 6:
@@ -120,7 +122,7 @@ def greetings_player(func):
     """Decorator function to welcome a player """
     def inner():
         name = func()
-        print(f"\nHi {name}! Welcome to the game, let's start!")
+        print(f"\nHi {name}! Welcome to the game, Enjoy!")
         print("="*70)
 
     return inner
@@ -141,19 +143,50 @@ BELOW
 Commands 'strip' and 'upper' ensure there are no whitespaces
 and letters are capital when letter compared.
 Additionally I added 'str' to ensure python takes it as a string.
+the_word = str(random_word().strip().upper()) # this is the word computer picked
 """
-"""the_word = str(random_word().strip().upper())   # the word that computer picked"""
-    wrong_answers = 0   # player starts with 0 wrong answers - 7 attempts
-
-def game_process():
 
 
 
+
+def ready_to_play():
+    """This function will ask player if he is ready to play"""
+    while True:
+        response = input("Are you ready to start? Press ('Y'/'N')").strip().upper()
+        if response == 'Y':
+            print("Be brave human! we start!")
+            break
+        elif response == 'N':
+            print("Good bye human! Maybe another time")
+            sys.exit()
+        else:
+            print("Sorry, I didn't get this, please enter 'Y' or 'N'")
+    return response
+
+
+
+
+def hidden_word():
+    library_choice() == the_word
+    the_word = str(random_word().strip().upper()) # this is the word computer picked
+    puzzle = len(the_word) * " _ "
+    return puzzle
+
+
+
+
+       
 
     
 
 
-introduction()
-library_choice()
-greetings_player(get_name)()
+
+
+def main():
+    introduction()
+    ready_to_play()
+    greetings_player(get_name)()
+    library_choice()
+    hidden_word()
+
    
