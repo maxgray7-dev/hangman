@@ -131,10 +131,11 @@ def greetings_player(func):
     return inner
 
 def get_name():
+    """Function to ask player his name"""
     while True:
         name = input("Please enter your name: ")
         if name.isalpha() and len(name) > 1:
-            return name
+            return name.title() 
         else:
             print("Invalid value. Please enter your name again: ")
         
@@ -145,7 +146,7 @@ def ready_to_play():
     while True:
         response = input("Are you ready to start? Press ('Y'/'N')\n").strip().upper()
         if response == 'Y':
-            print("Be brave human! we start now!")
+            print("Be brave human! We start now!")
             break
         elif response == 'N':
             print("Good bye human! Maybe another time")
@@ -167,11 +168,10 @@ def hidden_word():
 
 
     while "_" in my_list and attempt > 0 :
-        print(" ".join(my_list))
+        print(" " * 40, " ".join(my_list))
         new_letter = input("Please enter a letter!\n").upper().strip()
 
         if new_letter in alphabet - named_letters:
-            print("HERE ", new_letter, type(new_letter))
             named_letters.add(new_letter) # add new letter to the list
 
             if new_letter in the_word_letters:
@@ -194,7 +194,7 @@ def hidden_word():
                     named_letters.clear()
 
                     while True:
-                        restart = input("Would you like to restart and have another chance? Y / N\n").strip().upper()
+                        restart = input("Would you like to restart and try again? Y / N\n").strip().upper()
 
                         if restart == 'Y':
                             return True
@@ -215,6 +215,8 @@ def hidden_word():
         print("You have left attempts:", attempt)
         print("You used next letters:", ", " .join(named_letters))
     print("\n You won! The word is:", " ".join(my_list))
+    print(" ")
+    print(" "*18 +"*" * 30)
     while True:
         restart = input("Would you like to restart and have another chance? Y / N\n").strip().upper()
 
