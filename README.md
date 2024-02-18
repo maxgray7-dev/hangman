@@ -145,5 +145,6 @@ I found several advices for building this game, and I will share those sources i
 [Youtube - Decorators](https://www.youtube.com/watch?v=MYAEv3JoenI) I had a lot of time as couldn't wrap my head around decorations this video helped a lot.
 
 ## Acnowledgement
-I am very grateful for the help of my mentor Chris Quinn who constantly help me to overcome the stress, and capable to motivate me for my next achievement and future development.
-I also would like to say thank you to Stefania Frustagli, who is my friend. She often helps me with advices and suggestions how to succeed in my projects.
+I am grateful for help and support of my slack team who help with hints, mentor who motivates me and helps to believe in myself when project seems incredible difficult.
+I also would like to say thank you to Stefania Frustagli, who is my friend from my first Hackathon. She often helps me with advices and suggestions how to succeed in my projects.
+Thank you!!!
