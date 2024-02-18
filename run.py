@@ -168,7 +168,7 @@ def get_name():
 def ready_to_play():
     """This function will ask player if he is ready to play"""
     while True:
-        response = input("Are you ready to start the game? Press ('Y'/'N')\n").strip().upper()
+        response = input("Are you ready to start?('Y'/'N')\n").strip().upper()
         if response == 'Y':
             print("Be brave human! We start now!")
             break
@@ -181,7 +181,7 @@ def ready_to_play():
 
 
 def hidden_word():
-    'This function displays hidden word and responds for the decreasing attempts'
+    'Displays hidden word and responds for the decreasing attempts'
     #  variables that I will use in this function
     the_word = random_word().upper()
     alphabet = set(string.ascii_uppercase)
@@ -199,15 +199,15 @@ def hidden_word():
 
             if new_letter in the_word_letters:
                 the_word_letters.remove(new_letter)
-                print(f"Good Job!! You guessed correct! This word has the letter: '{new_letter}'")
+                print(f"Good Job!! You guessed correct'{new_letter}'")
 
             elif new_letter not in the_word_letters:
-                print(f"Alas! This is incorrect! This word has no letter: '{new_letter}'")
-                attempt - =1
+                print(f"Alas! This is incorrect! No letter: '{new_letter}'")
+                attempt -=1
                 hangman_picture(attempt)  # this displays the hangman picture
 
                 if attempt == 0:  # This checks if player has attempts
-                    print(f" Sorry. No '{new_letter}' in this word ! You have no more attempts! You lost")
+                    print(f"Sorry! No '{new_letter}'in this word! You lost")
                     print("The word you tried to guess was: ", the_word)
                     print(("_") * 70)
                     print((("_") * 25) + ("") * 20 + ("_") * 25)
@@ -217,14 +217,14 @@ def hidden_word():
                     named_letters.clear()
 
                     while True:
-                        restart = input("Would you like to restart and try again? Y / N\n").strip().upper()
+                        restart = input("Start again? Y/N\n").strip().upper()
 
                         if restart == 'Y':
                             return True
                         elif restart == 'N':
                             return False
                         else:
-                            print("Sorry, I didn't get this, please enter 'Y' or 'N'")
+                            print("Sorry, I didn't get it, please enter Y/N")
 
             for i, letter in enumerate(the_word):
                 if letter == new_letter:
@@ -240,7 +240,7 @@ def hidden_word():
     print(" ")
     print(" " * 18 + "*" * 30)
     while True:
-        restart = input("Would you like to restart and try again? Y / N\n").strip().upper()
+        restart = input("Start again? Y/N\n").strip().upper()
 
         if restart == 'Y':
             return True
