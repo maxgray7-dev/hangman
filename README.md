@@ -1,5 +1,5 @@
 # THE HANGMAN GAME
-developer: Maksim Popov
+Developer: Maksim Popov
 
 
 The hangman game is a popular game about guessing a word that computer selected. The player will have 7 lives, that represented as a hangman picture. 
