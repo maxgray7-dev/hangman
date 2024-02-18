@@ -9,6 +9,8 @@ Developer: Maksim Popov
 I used this site [ExtendsClass](https://extendsclass.com/python-tester.html) to check if I need to pay attention on something in my code. 
 I got the next result ![ExtendsClass](https://i.ibb.co/ZKY41mM/Python-code.png)
 
+[CI Python Linter](https://i.ibb.co/m4Tk355/CI-Python.png)
+
 
 | --TO BE TESTED--                                         | --ACTIONS--                            | --Expected outcome--                                                                 | --TEST RESULT--                 |   |   |
 |----------------------------------------------------------|----------------------------------------|--------------------------------------------------------------------------------------|---------------------------------|---|---|
