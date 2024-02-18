@@ -1,12 +1,15 @@
 # THE HANGMAN GAME
 Developer: Maksim Popov
-
+[HEROKU](https://h-a-n-g-m-a-n-f3b14ff67166.herokuapp.com/)
 
 The hangman game is a popular game about guessing a word that computer selected. The player will have 7 lives, that represented as a hangman picture. 
 
 The game with computer, that will pick a random word. After picking the word, computer asks a player to name a letter. If letter was picked correctly, computer opens the letter and continues asking the player again to provide a letter, until the whole word is opened. However, if player provides incorrect letter, then  computer starts drowing the hangman picture. 
 After each incorrect answer computer adds additional human parts to the  drawing.  If player will guess the word before the picture completed, player wins. Meanwhile if computer finish the picture - computer wins.
 
+
+Responsive Mockup:
+[Responsive Mockup](https://i.ibb.co/qBVCgNc/AIM.png) 
 
 # Content
 
@@ -61,8 +64,6 @@ To make game more fun, I used chat GPT to create a short and funny poem about ha
 After this computer confirm if pplayer ready to play, and if yes than it displays hidden word to the player that he should guess.
 After finishing the game computer asks player if he would like to continue and if yes, player must pick again level of difficulty and to guess a new word.
 ![Picture_from_the_game](https://i.ibb.co/kK11Q5K/Hangman.png)
-
-As a futures of the game I would 
 
 
 ## Technologies used

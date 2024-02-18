@@ -60,7 +60,6 @@ def rhyme():
             print("*****  But solve the puzzle, redemption's cheer.  *****")
             print((" " * 8 + "*" * 30))
             print((" " * 8 + "*" * 30))
-            print("I hope you enjoyed it!")
             break
         elif response == 'N':
             print("")

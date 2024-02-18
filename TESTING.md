@@ -2,7 +2,7 @@
 Developer: Maksim Popov
 
 [Readme](README.md)
-[Check Hangaman game on HEROKU]()
+[Check Hangaman game on HEROKU](https://h-a-n-g-m-a-n-f3b14ff67166.herokuapp.com/)
 
 
 ## Validator Testing
