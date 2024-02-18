@@ -49,7 +49,7 @@ def introduction():
 def rhyme():
     """This function will ask player if he is ready to play"""
     while True:
-        response = input("Fancy to hear rhyme about hangman? Press ('Y'/'N')\n").strip().upper()
+        response = input("Fancy to hear a rhyme about hangman? Press ('Y'/'N')\n").strip().upper()
         if response == 'Y':
             print(("_"* 80))
             print("*****      THE HANGMAN GAME RHYME                 *****")
@@ -243,7 +243,7 @@ def hidden_word():
     print(" ")
     print(" "*18 +"*" * 30)
     while True:
-        restart = input("Would you like to restart and have another chance? Y / N\n").strip().upper()
+        restart = input("Would you like to restart and try again? Y / N\n").strip().upper()
 
         if restart == 'Y':
             return True
