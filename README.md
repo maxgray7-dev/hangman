@@ -71,19 +71,19 @@ After finishing the game computer asks player if he would like to continue and i
 
 ## Technologies used
 
-[Python](https://www.python.org) - Programming Language that was used in this project.
-[ExtendsClass](https://extendsclass.com/python-tester.html) check for errors
-[GitHub](https://github.com/) store project in cloud
-[Codeanywhere](https://app.codeanywhere.com/workspace) IDE which sometimes worked and usually not, but was used in the beginning of the project.
-[VSCode](https://code.visualstudio.com/) - Local Integrated Development Environment(IDE) which I tried to use in this project.
-[GitPod](https://www.gitpod.io/) Primary Integrated Development Environment(IDE) that I used for this project 
-[Lucidchart](https://www.lucidchart.com/pages/) used to create a sketch of project.
-[ImgBB](https://imgbb.com) - icloud storage, used for saving screenshoots and uploading to my readme file.
-[Am I Responsive?](http://ami.responsivedesign.is) used to show how project looks on screens
-[Table Convert](https://tableconvert.com/) - used to create a table for Testing MD file
-[Chat GPT](https://chat.openai.com/) Tool that I mainly use for debugging and answering my questions.
-[Youtube](https://www.youtube.com/) watching learning videos and examples to understand how problem can be solved.
-[Heroku](https://dashboard.heroku.com/apps) Cloud platform used for deployment this project.
+[Python](https://www.python.org) - Programming Language that was used in this project.<br>
+[ExtendsClass](https://extendsclass.com/python-tester.html) check for errors.<br>
+[GitHub](https://github.com/) store project in cloud.<br>
+[Codeanywhere](https://app.codeanywhere.com/workspace) IDE which I used to start my project.<br>
+[VSCode](https://code.visualstudio.com/) - Local Integrated Development Environment(IDE) which I tried to use in this project.<br>
+[GitPod](https://www.gitpod.io/) Primary Integrated Development Environment(IDE) that I used for this project.<br>
+[Lucidchart](https://www.lucidchart.com/pages/) used to create a sketch of project.<br>
+[ImgBB](https://imgbb.com) - icloud storage, used for saving screenshoots and uploading to my readme file.<br>
+[Am I Responsive?](http://ami.responsivedesign.is) used to show how project looks on screens.<br>
+[Table Convert](https://tableconvert.com/) - used to create a table for Testing MD file.<br>
+[Chat GPT](https://chat.openai.com/) Tool that I mainly use for debugging and answering my questions.<br>
+[Youtube](https://www.youtube.com/) watching learning videos and examples to understand how problem can be solved.<br>
+[Heroku](https://dashboard.heroku.com/apps) Cloud platform used for deployment this project.<br>
 
 ### Future additions and improvements
 - I would consider to add more libraries with different themes and more words
