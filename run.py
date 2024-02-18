@@ -45,6 +45,30 @@ def introduction():
     print("_"*70)
 
 
+def rhyme():
+    """This function will ask player if he is ready to play"""
+    while True:
+        response = input("Fancy to hear rhyme about hangman? Press ('Y'/'N')\n").strip().upper()
+        if response == 'Y':
+            print(("_"* 80))
+            print("*****      THE HANGMAN GAME RHYME                 *****")
+
+            print("*****  In Hangman's play, a word concealed,       *****")
+            print("*****  Guessing letters, fate's revealed.         *****")
+            print("*****  Each wrong guess brings the gallows near,  *****")
+            print("*****  But solve the puzzle, redemption's cheer.  *****")
+            print((" "*8 +"*" * 30))
+            print((" "*8 +"*" * 30))
+            print("I hope you enjoyed it!")
+            break
+        elif response == 'N':
+            print("")
+            break
+        else:
+            print("Sorry, I didn't get this, please enter 'Y' or 'N'")
+    return response
+
+
 def library_choice():
     """
     Player picks the category for playing games
@@ -144,7 +168,7 @@ def get_name():
 def ready_to_play():
     """This function will ask player if he is ready to play"""
     while True:
-        response = input("Are you ready to start? Press ('Y'/'N')\n").strip().upper()
+        response = input("Are you ready to start the game? Press ('Y'/'N')\n").strip().upper()
         if response == 'Y':
             print("Be brave human! We start now!")
             break
@@ -231,6 +255,7 @@ def hidden_word():
 
 def main():
     introduction()
+    rhyme()
     ready_to_play()
     greetings_player(get_name)()
 
