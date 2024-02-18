@@ -32,4 +32,15 @@ I got the next result ![ExtendsClass](https://i.ibb.co/ZKY41mM/Python-code.png)
 | Prompt: Would you like to start again?                   | Only accepts Y or N, no other values   | Requests to enter "Y" or "N"                                                         | Test passed. Works as expected  |   |   |
 |                                                          |                                        |                                                                                      |                                 |   |   |
 
-					
+
+## Issues during the project
+
+During studying python I faced some issues with functions and struggled to understand Return value.
+I only started to understand more after watching yourube videos and started to work on my own project.
+Though I still feel like I need more practice with python, though it is getting much better and it is good fun.
+
+My biggest problem in python were decorations.
+Trying to undersand functions took time but decorations took for me about only 3 days which was quite stressful but at some point I got it.
+
+## Any bags I couldn't fix
+I didn't find any failures or bags in my project.
