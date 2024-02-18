@@ -1,15 +1,18 @@
 # THE HANGMAN GAME
-Developer: Maksim Popov
-[HEROKU](https://h-a-n-g-m-a-n-f3b14ff67166.herokuapp.com/)
+Developer: Maksim Popov<br>
+[HEROKU Link](https://h-a-n-g-m-a-n-f3b14ff67166.herokuapp.com/)
 
-The hangman game is a popular game about guessing a word that computer selected. The player will have 7 lives, that represented as a hangman picture. 
+![HANDMAN](https://i.ibb.co/pJ61Fjj/hangman-p1.png)
 
-The game with computer, that will pick a random word. After picking the word, computer asks a player to name a letter. If letter was picked correctly, computer opens the letter and continues asking the player again to provide a letter, until the whole word is opened. However, if player provides incorrect letter, then  computer starts drowing the hangman picture. 
-After each incorrect answer computer adds additional human parts to the  drawing.  If player will guess the word before the picture completed, player wins. Meanwhile if computer finish the picture - computer wins.
+The hangman game is a popular game about guessing a word that computer selected. The player has 7 lives, that represented in a form of hangman picture. Every wrong attempt adds to the picture additional part of hangman's body. 
+
+During the game computer picks a random wordand asks a player to name a letter from this word. If letter guessed correctly, computer places the letter in the word and continues asking the player for next letter, until the whole word is opened or attempts gone. 
+During the game process, when player provides incorrect letter,  computer displays the picture with part of hangman's body. 
+After each incorrect answer computer adds additional part to the  drawing.  If player will guess the word before the picture completed, player wins. Meanwhile if computer finish the picture - computer wins.
 
 
 Responsive Mockup:
-[Responsive Mockup](https://i.ibb.co/qBVCgNc/AIM.png) 
+![Responsive Mockup](https://i.ibb.co/qBVCgNc/AIM.png) 
 
 # Content
 
